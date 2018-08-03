@@ -1,0 +1,12 @@
+<html>
+     <body>
+          <h1>Hallo Welt</h1>
+          <p>Diese Seite wurde erstellt auf {{ ansible_date_time.date }}.</p>
+          <p>Diese Maschine kann erreicht werden via</p>
+          <ul>
+{% for address in ansible_all_ipv4_addresses %}
+             <li>{{ address }}</li>
+{% endfor %}
+          </ul>
+     </body>
+</html>
