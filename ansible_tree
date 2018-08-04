@@ -1,45 +1,34 @@
-
+.
 ├── ansible.cfg
 ├── hosts
-├── index.html.j2
-├── master.retry
 ├── master.yaml
 ├── playbooks
-│   ├── cli_variables.retry
-│   ├── cli_variables.yaml
-│   ├── common_tasks.retry
-│   ├── common_tasks.yaml
-│   ├── conditional_httpd.yaml
-│   ├── crontab_backup.retry
-│   ├── crontab_backup.yaml
-│   ├── delegate_to.yaml
+│   ├── common.yaml
 │   ├── deploy_website.yaml
-│   ├── firstrun.retry
 │   ├── firstrun.yaml
 │   ├── groups
-│   │   ├── database.yaml
-│   │   ├── files
-│   │   │   └── website.conf
+│   │   ├── dbserver.yaml
 │   │   └── webserver.yaml
-│   ├── local_action.yaml
-│   ├── network.retry
-│   ├── network.yaml
-│   ├── setup_variables.retry
-│   ├── setup_variables.yaml
-│   ├── update_centos.retry
-│   ├── update_centos.yaml
-│   ├── variables.yaml
-│   ├── webserver_remove.yaml
-│   ├── webserver.retry
-│   ├── webserver.yaml
-│   ├── website.conf
-│   ├── with_fileglobs.yaml
-│   ├── with_nested_loops.yaml
-│   └── with_sequence.yaml
+│   ├── latest.yaml
+│   ├── master.yaml
+│   ├── playbook.yaml
+│   ├── update_machines.yaml
+│   └── webserver.yaml.first
 └── roles
-    └── common
+    ├── basic
+    │   └── tasks
+    │       └── main.yml
+    ├── common
+    │   ├── tasks
+    │   │   └── main.yaml
+    │   └── templates
+    │       └── motd
+    └── webserver
+        ├── files
+        │   └── website.conf
+        ├── handlers
+        │   └── main.yaml
         ├── tasks
+        │   └── webserver.yaml
         └── templates
-            └── motd
-
-7 directories, 35 files
+            └── index.html.j2
